@@ -38,7 +38,7 @@ application’s file system.
 git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
 cd project-repo-3-tier-webapp
 ```
-
+-
 ### 2. Set Up Environment Variables
 
 Create a `.env` file in the root directory and specify the MongoDB connection string:
