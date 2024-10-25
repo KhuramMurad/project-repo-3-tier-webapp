@@ -1,5 +1,3 @@
-Here’s a `README.md` file for your 3-tier web application project, which provides an overview, setup instructions, and usage details.
-
 ```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
