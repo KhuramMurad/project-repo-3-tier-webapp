@@ -1,5 +1,3 @@
-Your `README.md` file is well-organized and clearly presents each section. I have made a few minor corrections and added some clarity. Here’s the updated content:
-
 ```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
