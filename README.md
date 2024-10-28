@@ -27,6 +27,8 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 - Docker and Docker Compose installed on your system
 - Git (for cloning the repository)
 
+
+```markdown
 ## Getting Started
 
 ### 1. Clone the Repository
@@ -34,6 +36,7 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 ```bash
 git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
 cd project-repo-3-tier-webapp
+```
 ```
 
 ### 2. Set Up Environment Variables
