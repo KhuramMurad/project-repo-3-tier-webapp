@@ -3,7 +3,10 @@ Here's the refined version of your README file with corrected formatting and str
 ```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
-This is a 3-tier web application that includes CRUD functionalities for posts and comments. Users can create, read, update, and delete posts, as well as add comments on each post. The application is fully Dockerized and uses Node.js for the backend, MongoDB for the database, and Express.js for routing. Images uploaded with posts are stored in the application’s file system.
+This is a 3-tier web application that includes CRUD functionalities for posts and comments.
+Users can create, read, update, and delete posts, as well as add comments on each post.
+The application is fully Dockerized and uses Node.js for the backend, MongoDB for the
+database, and Express.js for routing. Images uploaded with posts are stored in the application’s file system.
 
 ## Project Structure
 
