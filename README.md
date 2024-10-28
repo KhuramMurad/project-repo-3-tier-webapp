@@ -39,6 +39,7 @@ cd project-repo-3-tier-webapp
 ```
 ```
 
+```
 ### 2. Set Up Environment Variables
 
 Create a `.env` file in the root directory and specify the MongoDB connection string:
@@ -46,7 +47,7 @@ Create a `.env` file in the root directory and specify the MongoDB connection st
 ```bash
 MONGO_URI=mongodb://mongodb:27017/commentApp
 ```
-
+```
 ### 3. Run the Application with Docker Compose
 
 Build and start the Docker containers:
