@@ -108,7 +108,4 @@ Feel free to open issues or submit pull requests for any improvements. All contr
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-```
-
-This version is now correctly formatted, with all code blocks properly closed, ensuring Markdown renders correctly. Let me know if further changes are needed!
+This version allows everyone to use the project without specific licensing requirements.
