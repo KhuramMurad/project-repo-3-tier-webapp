@@ -28,7 +28,7 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 - Git (for cloning the repository)
 
 
-```markdown
+```
 ## Getting Started
 
 ### 1. Clone the Repository
@@ -43,7 +43,7 @@ cd project-repo-3-tier-webapp
 
 Create a `.env` file in the root directory and specify the MongoDB connection string:
 
-```plaintext
+```bash
 MONGO_URI=mongodb://mongodb:27017/commentApp
 ```
 
