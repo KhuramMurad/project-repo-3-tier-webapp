@@ -69,7 +69,6 @@ docker-compose down
 
 ## Project Structure
 
-```
 project-repo-3-tier-webapp
 ├── app
 │   └── server.js               # Main server file with API routes
@@ -84,7 +83,6 @@ project-repo-3-tier-webapp
 ├── .env                        # Environment variables
 ├── package.json                # Node dependencies
 └── README.md                   # Project documentation
-```
 
 ## API Endpoints
 
