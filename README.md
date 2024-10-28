@@ -1,16 +1,15 @@
+Your `README.md` file is well-organized and clearly presents each section. I have made a few minor corrections and added some clarity. Here’s the updated content:
+
 ```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
-This is a 3-tier web application that includes CRUD functionalities for posts and comments. Users can create, read,
-update, and delete posts, as well as add comments on each post. The application is fully Dockerized and uses Node.js
-for the backend, MongoDB for the database, and Express.js for routing. Images uploaded with posts are stored in the
-application’s file system.
+This is a 3-tier web application that includes CRUD functionalities for posts and comments. Users can create, read, update, and delete posts, as well as add comments on each post. The application is fully Dockerized and uses Node.js for the backend, MongoDB for the database, and Express.js for routing. Images uploaded with posts are stored in the application’s file system.
 
 ## Project Structure
 
-- **Backend**: Node.js with Express.js, handles API requests for managing posts and comments.
-- **Database**: MongoDB, stores posts and comments.
-- **Frontend**: Simple HTML, CSS, and JavaScript for interacting with the backend.
+- **Backend**: Node.js with Express.js, handling API requests for managing posts and comments.
+- **Database**: MongoDB, storing posts and comments.
+- **Frontend**: HTML, CSS, and JavaScript for interacting with the backend.
 
 ## Features
 
@@ -27,8 +26,8 @@ application’s file system.
 
 ## Prerequisites
 
-- Docker and Docker Compose installed on your system.
-- Git (for cloning the repository).
+- Docker and Docker Compose installed on your system
+- Git (for cloning the repository)
 
 ## Getting Started
 
@@ -90,7 +89,7 @@ project-repo-3-tier-webapp
 ### Posts
 
 - **GET /api/posts** - Fetch all posts with comments
-- **POST /api/posts** - Create a new post (image upload supported)
+- **POST /api/posts** - Create a new post (supports image uploads)
 - **PUT /api/posts/:postId** - Edit a post by ID
 - **DELETE /api/posts/:postId** - Delete a post by ID
 
@@ -103,7 +102,6 @@ project-repo-3-tier-webapp
 
 ![image](https://github.com/user-attachments/assets/bc9f9952-4bb6-41c5-8a04-9fc287377b91)
 
-
 ## Contributing
 
 Feel free to open issues or submit pull requests for any improvements. All contributions are welcome!
@@ -113,4 +111,9 @@ Feel free to open issues or submit pull requests for any improvements. All contr
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 ```
 
-This `README.md` file includes sections to guide users on cloning, running, and understanding the project structure and functionality. You can further customize it as needed!
+### Minor Updates:
+
+1. **Updated Formatting**: Minor adjustments were made for readability.
+2. **Clarifications**: Added “supports image uploads” in API endpoint descriptions for clarity.
+
+If this looks good, you can replace the current content in your `README.md` file with this version! Let me know if there are additional edits you'd like.
