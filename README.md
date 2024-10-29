@@ -58,8 +58,10 @@ docker-compose build
 docker-compose up -d
 ```
 
-This will start the app in detached mode. The application will be accessible at `http://localhost:3000`.
-
+This will start the app in detached mode. The application will be accessible at 
+```bash
+http://localhost:3000
+```
 ### 4. Stop the Application
 
 To stop the Docker containers, run:
