@@ -1,4 +1,3 @@
-(finale image size is reduced, .dockerignore file is included)
 services:
   app:
     build: .
