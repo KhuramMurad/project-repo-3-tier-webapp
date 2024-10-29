@@ -42,20 +42,20 @@ To run this application using Docker, follow these steps:
 2. **Set up environment variables**: Create a `.env` file with the following MongoDB connection string:
    ```plaintext
    sudo touch .env
-   echo "MONGO_URI=mongodb://mongodb:27017/commentApp" > .env
+   sudo echo "MONGO_URI=mongodb://mongodb:27017/commentApp" > .env
    ```
 
 3. **Run Docker Compose** to build and start the containers:
    ```bash
-   docker-compose build
-   docker-compose up -d
+   sudo docker-compose build
+   sudo docker-compose up -d
    ```
 
 4. **Access the application** at `http://localhost:3000`.
 
 5. **Stop the Application**:
    ```bash
-   docker-compose down
+   sudo docker-compose down
    ```
 
 ### Kubernetes Deployment
@@ -64,31 +64,31 @@ To deploy this application on a Kubernetes cluster, follow the instructions belo
 
 1. **Set up a Kubernetes Cluster** (using kind for local deployment):
    ```bash
-   kind create cluster --name my-cluster
+   sudo kind create cluster --name my-cluster
    ```
 
 2. **Build and Load the Docker Image**:
    ```bash
    cd ..
-   docker build -t local-webapp:latest .
-   kind load docker-image local-webapp:latest --name my-cluster
+   sudo docker build -t local-webapp:latest .
+   sudo kind load docker-image local-webapp:latest --name my-cluster
    ```
 
 3. **Apply the Kubernetes configurations**:
    Navigate to the `kubernetes` directory and apply the configuration files:
    ```bash
    cd kubernetes
-   kubectl apply -f mongo-pvc.yaml
-   kubectl apply -f mongo-deployment.yaml
-   kubectl apply -f app-deployment.yaml
+   sudo kubectl apply -f mongo-pvc.yaml
+   sudo kubectl apply -f mongo-deployment.yaml
+   sudo kubectl apply -f app-deployment.yaml
    ```
 
 4. **Access the Application**:
    Use port-forwarding to access the web app locally:
    ```bash
-   kubectl port-forward service/webapp-service 3000:3000
+   sudo kubectl port-forward service/webapp-service 3000:3000
    ```
-   Now, open `http://localhost:3000` to use the application.
+   Now, open ```http://localhost:3000``` to use the application.
 
 ---
 
