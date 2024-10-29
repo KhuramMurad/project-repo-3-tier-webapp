@@ -64,7 +64,7 @@ To deploy this application on a Kubernetes cluster, follow the instructions belo
 
 1. **Set up a Kubernetes Cluster** (using kind for local deployment):
    ```bash
-   sudo kind create cluster --name my-cluster
+   kind create cluster --name my-cluster
    ```
 
 2. **Build and Load the Docker Image**:
