@@ -29,13 +29,12 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 - Docker and Docker Compose installed on your system
 - Kubernetes cluster (e.g., kind, Minikube, or a cloud-based cluster)
 - Git (for cloning the repository)
+```
 
----
 ## Deployment Options
 
 ### Dockerized Application
 To run this application using Docker, follow these steps:
----
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
@@ -72,6 +71,7 @@ To deploy this application on a Kubernetes cluster, follow the instructions belo
 
 2. **Build and Load the Docker Image**:
    ```bash
+   cd ..
    docker build -t local-webapp:latest .
    kind load docker-image local-webapp:latest --name my-cluster
    ```
@@ -128,7 +128,8 @@ project-repo-3-tier-webapp
 
 ## Screenshots
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/075b8751-823d-418c-8b65-cc496da2ffa4)
+
 
 ## Contributing
 
@@ -136,4 +137,5 @@ Feel free to open issues or submit pull requests for any improvements. All contr
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is open for everyone to use, modify, and share without any specific licensing restrictions.
+
