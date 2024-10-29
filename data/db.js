@@ -1,13 +1,25 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/commentApp';
+const mongoURI = process.env.MONGO_URI;
+
+// Ensure the environment variable is set, otherwise throw an error
+if (!mongoURI) {
+    console.error("Error: MONGO_URI environment variable is not set.");
+    process.exit(1);
+}
+
+// Optional: Log the MongoDB URI to confirm it’s being loaded correctly
+console.log(`Connecting to MongoDB at ${mongoURI}`);
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.error('Could not connect to MongoDB:', err));
 
+// Schema definitions remain the same
 const commentSchema = new mongoose.Schema({
     text: String,
     createdAt: { type: Date, default: Date.now }
@@ -68,3 +80,4 @@ async function deleteComment(postId, commentId) {
 }
 
 module.exports = { getPosts, addPost, updatePost, deletePost, addComment, deleteComment };
+

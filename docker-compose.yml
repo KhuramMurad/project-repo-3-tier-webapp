@@ -1,12 +1,12 @@
-#version: '3.8' version is depriciated in later versions of docker-compose that's why I have commented it out.
+(finale image size is reduced, .dockerignore file is included)
 services:
   app:
     build: .
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
-      - MONGO_URI=mongodb://mongodb:27017/commentApp
+      NODE_ENV: development
+      MONGO_URI: mongodb://mongodb:27017/commentApp  # Should point to `mongodb` service, not `localhost`
     depends_on:
       - mongodb
     networks:
@@ -18,11 +18,7 @@ services:
       - "27017:27017"
     networks:
       - app-network
-    volumes:
-      - mongo-data:/data/db
 
 networks:
   app-network:
 
-volumes:
-  mongo-data:

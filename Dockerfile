@@ -1,17 +1,25 @@
-# Dockerfile
+# Production Stage
+FROM node:18-slim
 
-FROM node:18
+# Set working directory
+WORKDIR /app
 
-WORKDIR /usr/src/app
-
+# Copy only package files for dependency installation
 COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm install --production
 
-RUN mkdir -p public/uploads
-
+# Copy the rest of the application files
 COPY . .
 
+# Install libvips only if necessary
+RUN apt-get update && apt-get install -y --no-install-recommends libvips && \
+    rm -rf /var/lib/apt/lists/*
+
+# Expose the application port
 EXPOSE 3000
 
+# Start the application
 CMD ["node", "app/server.js"]
+
