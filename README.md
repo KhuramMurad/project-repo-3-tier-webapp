@@ -77,15 +77,15 @@ To deploy this application on a Kubernetes cluster, follow the instructions belo
    Navigate to the `kubernetes` directory and apply the configuration files:
    ```bash
    cd kubernetes
-   sudo kubectl apply -f mongo-pvc.yaml
-   sudo kubectl apply -f mongo-deployment.yaml
-   sudo kubectl apply -f app-deployment.yaml
+   kubectl apply -f mongo-pvc.yaml
+   kubectl apply -f mongo-deployment.yaml
+   kubectl apply -f app-deployment.yaml
    ```
 
 4. **Access the Application**:
    Use port-forwarding to access the web app locally:
    ```bash
-   sudo kubectl port-forward service/webapp-service 3000:3000
+   kubectl port-forward service/webapp-service 3000:3000
    ```
    Now, open ```http://localhost:3000``` to use the application.
 
