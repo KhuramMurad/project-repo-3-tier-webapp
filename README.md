@@ -46,7 +46,7 @@ Create a `.env` file in the root directory and specify the MongoDB connection st
 
 ```plaintext
 sudo touch .env
-MONGO_URI=mongodb://mongodb:27017/commentApp
+echo "MONGO_URI=mongodb://mongodb:27017/commentApp" > .env
 ```
 
 ### 3. Run the Application with Docker Compose
