@@ -31,13 +31,11 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 - Git (for cloning the repository)
 
 ---
-
 ## Deployment Options
 
 ### Dockerized Application
-
 To run this application using Docker, follow these steps:
-
+---
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
@@ -139,4 +137,3 @@ Feel free to open issues or submit pull requests for any improvements. All contr
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-```
