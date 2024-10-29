@@ -1,11 +1,7 @@
 ```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
-This is a 3-tier web application that includes CRUD functionalities for posts and
-comments. Users can create, read, update, and delete posts, as well as add comments
-on each post. The application is fully Dockerized and uses Node.js for the backend,
-MongoDB for the database, and Express.js for routing. Images uploaded with posts are
-stored in the application’s file system.
+This is a 3-tier web application that includes CRUD functionalities for posts and comments. Users can create, read, update, and delete posts, as well as add comments on each post. The application is fully Dockerized and can also be deployed on Kubernetes. It uses Node.js for the backend, MongoDB for the database, and Express.js for routing.
 
 ## Project Structure
 
@@ -18,6 +14,7 @@ stored in the application’s file system.
 - Add, edit, and delete posts with images
 - Add and delete comments on posts
 - Dockerized for easy deployment
+- Kubernetes configuration for scalable deployments
 
 ## Technologies Used
 
@@ -25,68 +22,98 @@ stored in the application’s file system.
 - **Express.js**
 - **MongoDB**
 - **Docker & Docker Compose**
+- **Kubernetes**
 
 ## Prerequisites
 
 - Docker and Docker Compose installed on your system
+- Kubernetes cluster (e.g., kind, Minikube, or a cloud-based cluster)
 - Git (for cloning the repository)
-```
-### Getting Started
 
-## 1. Clone the Repository
+---
 
-```bash
-git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
-cd project-repo-3-tier-webapp
-```
+## Deployment Options
 
-### 2. Set Up Environment Variables
+### Dockerized Application
 
-Create a `.env` file in the root directory and specify the MongoDB connection string:
+To run this application using Docker, follow these steps:
 
-```plaintext
-sudo touch .env
-echo "MONGO_URI=mongodb://mongodb:27017/commentApp" > .env
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/KhuramMurad/project-repo-3-tier-webapp.git
+   cd project-repo-3-tier-webapp
+   ```
 
-### 3. Run the Application with Docker Compose
+2. **Set up environment variables**: Create a `.env` file with the following MongoDB connection string:
+   ```plaintext
+   sudo touch .env
+   echo "MONGO_URI=mongodb://mongodb:27017/commentApp" > .env
+   ```
 
-Build and start the Docker containers:
+3. **Run Docker Compose** to build and start the containers:
+   ```bash
+   docker-compose build
+   docker-compose up -d
+   ```
 
-```bash
-docker-compose build
-docker-compose up -d
-```
+4. **Access the application** at `http://localhost:3000`.
 
-This will start the app in detached mode. The application will be accessible at 
-```bash
-http://localhost:3000
-```
-### 4. Stop the Application
+5. **Stop the Application**:
+   ```bash
+   docker-compose down
+   ```
 
-To stop the Docker containers, run:
+### Kubernetes Deployment
 
-```bash
-docker-compose down
-```
+To deploy this application on a Kubernetes cluster, follow the instructions below. The Kubernetes configuration files are located in the `kubernetes` directory.
+
+1. **Set up a Kubernetes Cluster** (using kind for local deployment):
+   ```bash
+   kind create cluster --name my-cluster
+   ```
+
+2. **Build and Load the Docker Image**:
+   ```bash
+   docker build -t local-webapp:latest .
+   kind load docker-image local-webapp:latest --name my-cluster
+   ```
+
+3. **Apply the Kubernetes configurations**:
+   Navigate to the `kubernetes` directory and apply the configuration files:
+   ```bash
+   cd kubernetes
+   kubectl apply -f mongo-pvc.yaml
+   kubectl apply -f mongo-deployment.yaml
+   kubectl apply -f app-deployment.yaml
+   ```
+
+4. **Access the Application**:
+   Use port-forwarding to access the web app locally:
+   ```bash
+   kubectl port-forward service/webapp-service 3000:3000
+   ```
+   Now, open `http://localhost:3000` to use the application.
+
+---
 
 ## Project Structure
+
 ```
 project-repo-3-tier-webapp
-├── app
-│   └── server.js               # Main server file with API routes
-├── data
-│   └── db.js                   # Database schema and functions
-├── public
-│   ├── index.html              # Frontend HTML
-│   ├── script.js               # Frontend JavaScript
-│   └── uploads                 # Folder for uploaded images
-├── Dockerfile                  # Docker configuration for app
-├── docker-compose.yml          # Docker Compose setup
-├── .env                        # Environment variables
-├── package.json                # Node dependencies
-└── README.md                   # Project documentation
+├── app                    # Backend server files
+├── data                   # MongoDB schema and functions
+├── public                 # Frontend files
+├── docker-compose.yml     # Docker Compose setup
+├── Dockerfile             # Docker image configuration
+├── kubernetes             # Kubernetes deployment files
+│   ├── mongo-pvc.yaml         # Persistent Volume Claim for MongoDB storage
+│   ├── mongo-deployment.yaml  # Deployment and Service for MongoDB
+│   └── app-deployment.yaml    # Deployment and Service for the web application
+├── .gitignore
+├── README.md              # Project documentation
+└── package.json           # Node dependencies
 ```
+
 ## API Endpoints
 
 ### Posts
@@ -103,7 +130,7 @@ project-repo-3-tier-webapp
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/bc9f9952-4bb6-41c5-8a04-9fc287377b91)
+![Uploading image.png…]()
 
 ## Contributing
 
@@ -111,4 +138,5 @@ Feel free to open issues or submit pull requests for any improvements. All contr
 
 ## License
 
-This version allows everyone to use the project without specific licensing requirements.
+This project is licensed under the MIT License. See the LICENSE file for more details.
+```
