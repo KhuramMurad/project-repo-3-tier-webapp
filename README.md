@@ -1,4 +1,3 @@
-```markdown
 # 3-Tier Web Application with Docker, Node.js, and MongoDB
 
 This is a 3-tier web application that includes CRUD functionalities for posts and comments. Users can create, read, update, and delete posts, as well as add comments on each post. The application is fully Dockerized and can also be deployed on Kubernetes. It uses Node.js for the backend, MongoDB for the database, and Express.js for routing.
@@ -29,7 +28,6 @@ This is a 3-tier web application that includes CRUD functionalities for posts an
 - Docker and Docker Compose installed on your system
 - Kubernetes cluster (e.g., kind, Minikube, or a cloud-based cluster)
 - Git (for cloning the repository)
-```
 
 ## Deployment Options
 
