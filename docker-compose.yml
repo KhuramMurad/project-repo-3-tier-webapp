@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8' version is depriciated in later versions of docker-compose that's why I have commented it out.
 services:
   app:
     build: .
