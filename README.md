@@ -45,6 +45,7 @@ cd project-repo-3-tier-webapp
 Create a `.env` file in the root directory and specify the MongoDB connection string:
 
 ```plaintext
+sudo touch .env
 MONGO_URI=mongodb://mongodb:27017/commentApp
 ```
 
