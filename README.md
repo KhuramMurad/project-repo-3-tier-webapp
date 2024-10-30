@@ -69,7 +69,7 @@ To deploy this application on a Kubernetes cluster, follow the instructions belo
 
 2. **Build and Load the Docker Image**:
    ```bash
-   sudo docker build -t local-webapp:latest .
+   sudo docker build -t local-webapp:latest -f ../Dockerfile ..
    kind load docker-image local-webapp:latest --name my-cluster
    ```
 
