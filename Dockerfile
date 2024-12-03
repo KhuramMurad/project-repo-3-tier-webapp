@@ -1,16 +1,25 @@
-# Stage 1: Build
-FROM node:18 as builder
+# Production Stage
+FROM node:18-slim
+
+# Set working directory
 WORKDIR /app
+
+# Copy only package files for dependency installation
 COPY package*.json ./
-RUN npm install
+
+# Install dependencies
+RUN npm install --production
+
+# Copy the rest of the application files
 COPY . .
+
+# Install libvips only if necessary
 RUN apt-get update && apt-get install -y --no-install-recommends libvips && \
     rm -rf /var/lib/apt/lists/*
 
-# Stage 2: Production
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=builder /app . 
-RUN npm prune --production
+# Expose the application port
 EXPOSE 3000
+
+# Start the application
 CMD ["node", "app/server.js"]
+
